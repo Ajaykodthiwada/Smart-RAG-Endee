@@ -1,158 +1,125 @@
-# 🚀 Endee AI Project – Semantic Search & RAG System
+# Smart Document Assistant using RAG + Endee
 
-## 📌 Project Overview
+## 🚀 Problem Statement
 
-This project demonstrates a **Retrieval Augmented Generation (RAG)** based AI system using vector embeddings.
-It enables **semantic search**, where user queries are matched based on meaning rather than exact keywords.
-
----
-
-## 🎯 Problem Statement
-
-Traditional search systems rely on keyword matching, which often fails to understand the context of user queries.
-This project solves that problem using **vector embeddings and similarity search** to return more relevant results.
+Users often struggle to extract meaningful information from large documents such as PDFs, notes, or research papers. Traditional keyword-based search is inefficient and does not provide context-aware answers.
 
 ---
 
-## 🧠 Key Features
+## 💡 Solution
 
-* 🔍 Semantic Search (meaning-based search)
-* 🤖 Retrieval Augmented Generation (RAG)
-* ⚡ FastAPI backend for API endpoints
-* 🧮 Vector embeddings using Sentence Transformers
-* 📊 Top-k relevant results retrieval
+This project implements a **Retrieval-Augmented Generation (RAG)** system using the **Endee Vector Database**. It allows users to query documents in natural language and receive accurate, context-based answers.
 
 ---
 
 ## ⚙️ Tech Stack
 
-* **Python**
-* **FastAPI**
-* **Sentence Transformers**
-* **Endee (Vector Database Concept)**
-* **Uvicorn**
+* Python
+* Endee (Vector Database)
+* Sentence Transformers (Embeddings)
+* NumPy / Pandas
+* Streamlit (optional UI)
 
 ---
 
-## 🏗️ System Design
+## 🧠 How It Works
 
-### 🔄 Workflow
-
-1. User enters a query
-2. Query is converted into vector embedding
-3. Stored documents are also converted into embeddings
-4. Similarity search is performed using vector comparison
-5. Top relevant results are returned
+1. Input document is split into smaller chunks
+2. Each chunk is converted into embeddings
+3. Embeddings are stored in Endee vector database
+4. User query is converted into embedding
+5. Endee retrieves most relevant chunks
+6. Retrieved data is used to generate final answer
 
 ---
 
-## 📂 Project Structure
+## 🗂️ Project Structure
 
 ```
-endee/
- ├── app/
- │   ├── main.py          # FastAPI entry point
- │   ├── rag.py           # RAG logic (search + storage)
- │   ├── embeddings.py    # Embedding generation
- ├── README.md
- ├── requirements.txt
+Smart-RAG-Endee/
+│
+├── embeddings.py      # Handles embedding generation
+├── rag.py             # Core RAG pipeline logic
+├── main.py            # Entry point of the application
+├── requirements.txt   # Dependencies
+├── README.md          # Project documentation
 ```
 
 ---
 
-## 🧠 How Endee is Used
+## 🔥 How Endee is Used
 
-Endee is a **vector database** designed for efficient similarity search.
+Endee is used as a **vector database** to:
 
-In this project:
-
-* Text data is converted into embeddings
-* Embeddings are stored and compared
-* Similarity search is performed to retrieve relevant results
-
-(Current implementation uses in-memory storage, but follows Endee’s vector search principles.)
+* Store document embeddings
+* Perform similarity search
+* Retrieve relevant data efficiently for answering queries
 
 ---
 
-## ▶️ How to Run the Project
+## ▶️ Setup Instructions
 
-### 🔹 Step 1: Clone Repository
+### 1. Clone the repository
 
-```bash
-git clone https://github.com/poemsun101/endee.git
-cd endee
+```
+git clone https://github.com/Ajaykodthiwada/Smart-RAG-Endee.git
+cd Smart-RAG-Endee
 ```
 
-### 🔹 Step 2: Install Dependencies
+### 2. Install dependencies
 
-```bash
+```
 pip install -r requirements.txt
 ```
 
-### 🔹 Step 3: Run Server
+### 3. Run the project
 
-```bash
-python -m uvicorn app.main:app --reload
+```
+python main.py
 ```
 
 ---
 
-## 🌐 API Endpoints
+## 📌 Example Usage
 
-### 🏠 Home
-
-```
-GET /
-```
-
-### 🔍 Ask Query
+**Input:**
 
 ```
-GET /ask?q=your_question
+What is Artificial Intelligence?
 ```
 
-### ✅ Example
+**Output:**
 
 ```
-/ask?q=What is AI?
+Artificial Intelligence is the simulation of human intelligence in machines...
 ```
 
 ---
 
-## 📌 Example Output
+## 📸 Output
 
-```json
-{
-  "query": "What is AI?",
-  "results": [
-    "AI is Artificial Intelligence",
-    "Machine Learning is part of AI"
-  ]
-}
-```
+(Add a screenshot here if possible to improve presentation)
 
 ---
 
-## 🚀 Future Enhancements
+## ✅ Features
 
-* 🔗 Integrate real Endee vector database
-* 🌐 Add frontend UI (React / Streamlit)
-* 🧠 Improve ranking with advanced models
-* 📊 Add analytics dashboard
-
----
-
-## 🙌 Conclusion
-
-This project demonstrates how **vector databases and embeddings** can significantly improve search systems using AI techniques like RAG.
+* Semantic search using embeddings
+* Retrieval-Augmented Generation (RAG)
+* Efficient vector search using Endee
+* Simple and modular code structure
 
 ---
 
-## 📎 Submission
+## 🚀 Future Improvements
 
-GitHub Repository:
-https://github.com/poemsun101/endee
+* Add Streamlit-based UI
+* Support multiple documents
+* Improve answer generation using advanced LLMs
+* Deploy as a web application
 
 ---
 
-⭐ If you like this project, consider giving it a star!
+## 👨‍💻 Author
+
+Ajay Kodthiwada
